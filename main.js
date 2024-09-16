@@ -1,7 +1,7 @@
-export function add(a, b) {
-  return a + b;
-}
+const flags = parseArgs(Deno.args, {
+  string: ["version"],
+  default: { color: true },
+  negatable: ["color"],
+});
 
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+console.log(flags.help);
